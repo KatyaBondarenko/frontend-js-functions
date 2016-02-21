@@ -51,3 +51,32 @@ console.log(min(arr));
 
 
 
+function max(array) {
+
+
+  var max;
+  var isMax = false;
+
+  for (var i = 0; i < array.length; i++) {
+
+    if (!isNaN(array[i])){
+      if (!(typeof array[i] == 'string' || typeof array[i] == 'boolean' || typeof array[i] == 'object') ){
+        if (!isMax){
+          max = array[i];
+          isMax = true;
+        }
+        else{
+          if (array[i] > max) {
+            max = array[i];
+          }
+        }
+      }
+    }
+  }
+  return max;
+}
+
+var arr = [null, false, "4", undefined, true, 99, 524];
+
+
+console.log(max(arr));
