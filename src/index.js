@@ -16,37 +16,37 @@
 console.log(sum (null, false, "4", undefined, true, 99, 6));
 
 
-
-
 function min(array) {
 
 
   var min;
   var isMin = false;
 
-  for (var i = 0; i < array.length; i++) {
+  if (!array)
+  {
+    return;
+  }
 
-    if (!isNaN(array[i])){
-      if (!(typeof array[i] == 'string' || typeof array[i] == 'boolean' || typeof array[i] == 'object') ){
-        if (!isMin){
-          min = array[i];
-          isMin = true;
-        }
-        else{
-          if (array[i] < min)min = array[i];
+    for (var i = 0; i < array.length; i++) {
+
+      if (!isNaN(array[i])) {
+        if (!(typeof array[i] == 'string' || typeof array[i] == 'boolean' || typeof array[i] == 'object')) {
+          if (!isMin) {
+            min = array[i];
+            isMin = true;
+          }
+          else {
+            if (array[i] < min)min = array[i];
+          }
         }
       }
     }
+    return min;
   }
-  return min;
-}
 
-var arr = [null, false, "4", undefined, true, 99, 524];
+var arrMin = [];
 
-
-console.log(min(arr));
-
-
+console.log(min(arrMin));
 
 
 
@@ -56,6 +56,11 @@ function max(array) {
 
   var max;
   var isMax = false;
+
+  if (!array)
+  {
+    return;
+  }
 
   for (var i = 0; i < array.length; i++) {
 
@@ -76,7 +81,8 @@ function max(array) {
   return max;
 }
 
-var arr = [null, false, "4", undefined, true, 99, 524];
+var arrMax = [];
 
 
-console.log(max(arr));
+console.log(max(arrMax));
+
